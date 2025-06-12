@@ -1,0 +1,213 @@
+/* Basic reset for margin and padding */
+body {
+  margin: 0;
+  padding: 0;
+  /* Use a clean, nature-inspired font stack */
+  font-family: 'Segoe UI', 'Verdana', 'Trebuchet MS', 'Gill Sans', Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+  background-color: #2e8b57; /* Green color for eco-friendly feel */
+  padding: 10px 0; /* Space above and below the nav */
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Centers the navigation links */
+}
+
+nav ul li {
+  display: inline; /* Displays links in a row */
+  margin: 0 15px; /* Space between links */
+}
+
+nav ul li a {
+  /* Make nav links look like CTA buttons with light green background */
+  display: inline-block;
+  background-color: #b2e5d6; /* Light green */
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 5px;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 6px rgba(46,139,87,0.08);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  background-color: #e0f7fa;
+  color: #1b5e20;
+}
+
+/* Hero section styles */
+.hero {
+  position: relative; /* Needed for overlay positioning */
+  background-color: #e0f7fa; /* Light blue background for hero section */
+  text-align: center; /* Centers the text */
+  padding: 60px 20px; /* Adds space around the content */
+  overflow: hidden; /* Ensures overlay stays within section */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('img/park.jpg') center center/cover no-repeat;
+  opacity: 0.25; /* Slightly visible overlay */
+  pointer-events: none; /* Allows clicks through overlay */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2; /* Place text above overlay */
+}
+
+.hero h1 {
+  font-size: 2.5em; /* Makes the headline larger */
+  color: #2e8b57; /* Matches the header color */
+}
+
+.hero p {
+  font-size: 1.2em; /* Slightly larger subtext */
+  color: #333; /* Dark gray for better readability */
+  max-width: 800px; /* Limits the width of the text block */
+  margin: 20px auto; /* Centers the text block with space above and below */
+}
+
+/* Call to action button styles */
+.btn {
+  display: inline-block; /* Makes the link behave like a button */
+  background-color: #2e8b57; /* Green background for the button */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Space inside the button */
+  text-decoration: none; /* Removes underline from the link */
+  border-radius: 5px; /* Rounds the corners of the button */
+  margin-top: 20px; /* Space above the button */
+}
+
+/* Destination Cards Section */
+.destinations {
+  display: flex; /* Use flexbox for horizontal layout on desktop */
+  flex-direction: column; /* Stack cards vertically by default (mobile-first) */
+  gap: 20px; /* Space between cards */
+  max-width: 1000px; /* Optional: limit width for better appearance */
+  margin: 40px auto; /* Center the section and add space above/below */
+  padding: 0 10px; /* Padding for small screens */
+}
+
+.card {
+  background: #fff; /* White background for cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
+  overflow: hidden; /* Keeps image corners rounded */
+  text-align: center; /* Center text in card */
+  padding-bottom: 20px; /* Space at the bottom */
+}
+
+.card img {
+  width: 100%; /* Image fills the card width */
+  max-width: 100%; /* Makes image responsive */
+  height: auto; /* Maintains aspect ratio */
+  min-height: 150px; /* Ensures some height for all images */
+  object-fit: cover; /* Crop image to fill area */
+}
+
+.card h2 {
+  color: #2e8b57; /* Green for destination name */
+  margin: 16px 0 8px 0; /* Space above and below */
+}
+
+.card p {
+  color: #333; /* Dark text for description */
+  margin: 0 16px; /* Space on sides */
+  font-size: 1em;
+}
+
+/* Desktop layout: show cards in a row */
+@media (min-width: 700px) {
+  .destinations {
+    flex-direction: row; /* Cards side by side */
+    justify-content: center; /* Center cards horizontally */
+  }
+  .card {
+    flex: 1 1 250px; /* Cards grow/shrink, min width 250px */
+    max-width: 300px; /* Optional: max width for each card */
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 10px; /* Reduces padding on smaller screens */
+  }
+
+  .hero h1 {
+    font-size: 2em; /* Smaller headline on mobile */
+  }
+
+  .hero p {
+    font-size: 1em; /* Smaller subtext on mobile */
+  }
+
+  nav ul li {
+    display: block; /* Stacks the navigation links */
+    margin: 10px 0; /* Space between stacked links */
+  }
+}
+
+/* Responsive styles for screens 600px and wider */
+@media (min-width: 600px) {
+  .destinations {
+    gap: 30px; /* More space between cards on larger screens */
+    padding: 0 30px;
+  }
+  .card {
+    margin: 0;
+    padding-bottom: 30px;
+  }
+  .hero {
+    padding: 80px 40px;
+  }
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  background-color: #2e8b57; /* Green background */
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 40px 0 0 0;
+}
+.cta-section h2 {
+  margin-bottom: 16px;
+  font-size: 2em;
+}
+.cta-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #2e8b57;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 10px;
+}
+.cta-btn:hover {
+  background-color: #e0f7fa;
+  color: #1b5e20;
+}
